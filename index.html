@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://kit.fontawesome.com/6d653f524a.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -33,11 +39,48 @@
     <div class="Lower">
         <div class="gestures">
             <div class="triangle"></div>
-            <div class="rock"><img src="./Gesture-img/Rock.svg" alt="Rock-gesture"></div>
-            <div class="scissors"><img src="./Gesture-img/scissors.svg" alt="scissor-gesture"></div>
-            <div class="paper"><img src="./Gesture-img/Paper.svg" alt="paper-gesture"></div>
+            <span class="rock"><img src="./Gesture-img/Rock.svg" alt="Rock-gesture"></span>
+            <span class="scissors"><img src="./Gesture-img/scissors.svg" alt="scissor-gesture"></span>
+            <span class="paper"><img src="./Gesture-img/Paper.svg" alt="paper-gesture"></span>
         </div>
     </div>
+    <div class="lowest-container">
+        <div class="button-container">
+            <button class="rules" onclick=openRule()>RULES</button>
+            <button class="next">NEXT</button>
+        </div>
+    </div>
+    <div class="rules-container">
+        <div class="rules-content">
+
+            <h1>Game Rules</h1>
+            <ul>
+                <li><i class="fa-solid fa-square" style="color: #ffd600;"></i><span>Rock beats scissors, scissors beat paper, and paper beats rock.</span></li>
+                <li><i class="fa-solid fa-square" style="color: #ffd600;"></i><span>Agree ahead of time whether you'll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                <li><i class="fa-solid fa-square" style="color: #ffd600;"></i><span>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                <li><i class="fa-solid fa-square" style="color: #ffd600;"></i><span>If both players lay down the same hand, each player lays down another hand</span>
+                    </span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="cross" onclick="closeRule()">
+            <h1>X</h1>
+        </div>
+    </div>
+    <script>
+        function openRule() {
+            let open = document.querySelector(".rules-container")
+            open.style.display = "block"
+
+        }
+
+        function closeRule() {
+            let close = document.querySelector(".rules-container")
+            close.style.display = "none"
+
+        }
+    </script>
 </body>
 
 </html>

@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 html {
     font-size: 10px;
 }
@@ -73,6 +72,171 @@ body {
 }
 
 .Lower {
-    height: 70vh;
-    background-color: mediumaquamarine;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gestures {
+    width: 33rem;
+    position: relative;
+}
+
+.triangle {
+    width: 0px;
+    height: 0px;
+    position: relative;
+    border-left: 16.5rem solid transparent;
+    border-right: 16.5rem solid transparent;
+    border-top: 26.8rem solid rgba(0, 0, 0, 0.64);
+}
+
+.triangle::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    position: relative;
+    border-left: 12rem solid transparent;
+    border-right: 12rem solid transparent;
+    border-top: 200px solid #8CC461;
+    left: -12rem;
+    bottom: 4.5rem;
+}
+
+.gestures>span {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 15rem;
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.gestures>span>img {
+    height: 7rem;
+    width: 7rem;
+}
+
+.rock {
+    top: -7.5rem;
+    left: -7.5rem;
+    border: 20px solid #0074B6;
+}
+
+.scissors {
+    top: -7.5rem;
+    right: -7.5rem;
+    border: 20px solid #BD00FF;
+}
+
+.paper {
+    bottom: -7.5rem;
+    left: 9rem;
+    border: 20px solid #FFA943;
+}
+
+.lowest-container {
+    height: 10vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.button-container {
+    height: 100%;
+    width: 30rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button-container>button {
+    color: #FFF;
+    width: 12rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2rem;
+    font-size: 1.6rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 2px solid #ffff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button-container>button:hover {
+    background-color: #FFF;
+    color: #8CC461;
+}
+
+.next {
+    display: none;
+}
+
+
+/* Rule banner */
+
+.rules-container {
+    height: 40rem;
+    width: 34rem;
+    position: fixed;
+    bottom: 12rem;
+    right: 5rem;
+    padding: 1.6rem;
+    background-color: #004429;
+    border-radius: 8px;
+    box-shadow: 0 0 0 .9rem #fff;
+    display: none;
+}
+
+.rules-content {
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+.rules-content>h1 {
+    flex-grow: 0.5;
+    font-size: 3.5rem;
+}
+
+.rules-content>ul {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 1.7rem;
+    list-style: none;
+}
+
+.rules-content>ul>li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cross {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-family: 'Dangrek', sans-serif;
+    width: 8rem;
+    height: 8rem;
+    border: 0.9rem solid #fff;
+    border-radius: 50%;
+    background-color: #F00;
+    color: #FFF;
+    position: absolute;
+    top: -4rem;
+    right: -4rem;
+    cursor: pointer;
 }
