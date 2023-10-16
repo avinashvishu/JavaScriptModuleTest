@@ -33,7 +33,7 @@ function userchoose(userchosen) {
 
     if (userchosen == computerChoise) {
         document.querySelector(".next ").style.display = "none";
-        document.querySelector(".WinLose").innerHTML = "<h1>TIE UP</h1><button onclick='homepage()' >PLAY AGAIN</button>"
+        document.querySelector(".WinLose").innerHTML = "<h1>TIE UP</h1><button onclick='homepage()' >REPLAY</button>"
 
     } else if (userchosen == 'rock') {
 
