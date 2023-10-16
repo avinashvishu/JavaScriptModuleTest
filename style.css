@@ -134,6 +134,10 @@ body {
     width: 7rem;
 }
 
+.gesture-logo {
+    height: 6rem;
+}
+
 .rock {
     border: 2rem solid var(--rockBorder);
 }
