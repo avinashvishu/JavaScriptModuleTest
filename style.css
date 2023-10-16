@@ -112,7 +112,7 @@ body {
     position: relative;
     border-left: 12rem solid transparent;
     border-right: 12rem solid transparent;
-    border-top: 200px solid #8CC461;
+    border-top: 20rem solid #8CC461;
     left: -12rem;
     bottom: 4.5rem;
 }
@@ -354,9 +354,10 @@ body {
     color: #6B6B6B;
     background-color: #FFF;
     border: none;
-    border-radius: 10px;
+    border-radius: 1rem;
     margin-top: 2rem;
     cursor: pointer;
+    font-size: 1.34rem;
 }
 
 
@@ -386,7 +387,7 @@ body {
     height: 4rem;
     background-color: transparent;
     border: 2px solid #ffff;
-    border-radius: 10px;
+    border-radius: 1rem;
     cursor: pointer;
 }
 
@@ -517,9 +518,10 @@ h2 {
     color: #6B6B6B;
     background-color: #FFF;
     border: none;
-    border-radius: 10px;
+    border-radius: 1rem;
     margin-top: 4rem;
     cursor: pointer;
+    font-size: 1.34rem;
 }
 
 .star1 img {
@@ -611,5 +613,14 @@ h2 {
     }
     85% {
         scale: 0.5;
+    }
+}
+
+
+/* Responsive design */
+
+@media only screen and (max-width: 500px) {
+    html {
+        font-size: 5px;
     }
 }
