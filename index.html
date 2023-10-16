@@ -15,72 +15,165 @@
 </head>
 
 <body>
-    <div class="Upper">
-        <div class="upper-container">
-            <div class="title">
-                <h3>ROCK</h3>
-                <h3>PAPER</h3>
-                <h3>SCISSORS</h3>
-            </div>
-            <div class="score-board">
-                <div class="computer score">
-                    <div class="score-heading">COMPUTER <br>SCORE</div>
-
-                    <div class="Cscore-number DigitScore">0</div>
+    <div class="Main-container">
+        <div class="Upper">
+            <div class="upper-container">
+                <div class="title">
+                    <h3>ROCK</h3>
+                    <h3>PAPER</h3>
+                    <h3>SCISSORS</h3>
                 </div>
-                <div class="your score">
-                    <div class="score-heading">YOUR <br>SCORE</div>
+                <div class="score-board">
+                    <div class="computer score">
+                        <div class="score-heading">COMPUTER <br>SCORE</div>
 
-                    <div class="Yscore-number DigitScore">0</div>
+                        <div class="Cscore-number DigitScore"></div>
+                    </div>
+                    <div class="your score">
+                        <div class="score-heading">YOUR <br>SCORE</div>
+
+                        <div class="Yscore-number DigitScore"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Lower">
+            <div class="gestures">
+                <div class="triangle"></div>
+                <span class="rock gestureHW rock-position" onclick="userchoose('rock')"><img src="./Gesture-img/Rock.svg" alt="Rock-gesture"></span>
+                <span class="scissors gestureHW scissors-position" onclick="userchoose('scissors')"><img src=" ./Gesture-img/scissors.svg " alt="scissor-gesture "></span>
+                <span class="paper gestureHW paper-position " onclick="userchoose('paper')"><img src="./Gesture-img/Paper.svg" alt="paper-gesture"></span>
+            </div>
+
+        </div>
+        <!-- Second display which hides the Lower and shows result -->
+        <div class="result-contianer">
+            <div class="result">
+                <div class="user-picked">
+                    <h1>YOU PICKED</h1>
+                    <div class="win">
+
+                        <div class="content">
+                            <div id="RockUser"><img src="./Gesture-img/Rock.svg" alt="Rock-gesture"></div>
+                            <div id="ScissorsUser">
+                                <img src="./Gesture-img/scissors.svg" alt="cissor-gesture"></div>
+                            <div id="PaperUser"><img src="./Gesture-img/Paper.svg" alt="Paper-gesture"></div>
+                        </div>
+                        <span class="UserwinAnimation" style="--i:0 "></span>
+                        <span class="UserwinAnimation" style="--i:1 "></span>
+                        <span class="UserwinAnimation" style="--i:2 "></span>
+                        <span class="UserwinAnimation" style="--i:3 "></span>
+                        <span class="UserwinAnimation" style="--i:4 "></span>
+                    </div>
+                </div>
+                <div class="WinLose">
+
+                </div>
+                <div class="Pc-picked">
+                    <h1>PC PICKED</h1>
+                    <div class="win">
+
+                        <div class="content">
+                            <div id="RockPc"><img src="./Gesture-img/Rock.svg" alt="Rock-gesture"></div>
+                            <div id="ScissorsPc">
+                                <img src="./Gesture-img/scissors.svg" alt="cissor-gesture"></div>
+                            <div id="PaperPc"><img src="./Gesture-img/Paper.svg" alt="Paper-gesture"></div>
+                        </div>
+                        <span class="PcwinAnimation" style="--i:0 "></span>
+                        <span class="PcwinAnimation" style="--i:1 "></span>
+                        <span class="PcwinAnimation" style="--i:2 "></span>
+                        <span class="PcwinAnimation" style="--i:3 "></span>
+                        <span class="PcwinAnimation" style="--i:4 "></span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="Lower">
-        <div class="gestures">
-            <div class="triangle"></div>
-            <span class="rock"><img src="./Gesture-img/Rock.svg" alt="Rock-gesture"></span>
-            <span class="scissors"><img src="./Gesture-img/scissors.svg" alt="scissor-gesture"></span>
-            <span class="paper"><img src="./Gesture-img/Paper.svg" alt="paper-gesture"></span>
+    <div class="hurraypage">
+        <div class="hurraycup">
+            <div class="cup"><img src="./Gesture-img/victorycup.svg" alt="victory-cup" srcset=""></div>
+            <span class="star1"><img class="star" src="./Gesture-img/Star.svg" alt="stars"></span>
+            <span class="star2"><img class="star" src="./Gesture-img/Star.svg" alt="stars"></span>
+            <span class="star3"><img class="star" src="./Gesture-img/Star.svg" alt="stars"></span>
+            <span class="star4"><img class="star" src="./Gesture-img/Star.svg" alt="stars"></span>
+            <span class="star5"><img class="star" src="./Gesture-img/Star.svg" alt="stars"></span>
+            <span class="star6"><img class="star" src="./Gesture-img/Star.svg" alt="stars"></span>
+            <span class="star7"><img class="star" src="./Gesture-img/Star.svg" alt="stars"></span>
+            <span class="star8"><img class="star" src="./Gesture-img/Star.svg" alt="stars"></span>
+
+        </div>
+        <h1 class="hurrayheading">HURRAY!!</h1>
+        <h2>YOU WON THE GAME</h2>
+        <button onclick="homepage()">PLAY AGAIN</button>
+    </div>
+    <div class="lowest-container ">
+        <div class="button-container ">
+            <button class="rules " onclick=openRule()>RULES</button>
+            <button class="next " onclick="openhurray()">NEXT</button>
         </div>
     </div>
-    <div class="lowest-container">
-        <div class="button-container">
-            <button class="rules" onclick=openRule()>RULES</button>
-            <button class="next">NEXT</button>
-        </div>
-    </div>
-    <div class="rules-container">
-        <div class="rules-content">
+    <div class="rules-container ">
+        <div class="rules-content ">
 
             <h1>Game Rules</h1>
             <ul>
-                <li><i class="fa-solid fa-square" style="color: #ffd600;"></i><span>Rock beats scissors, scissors beat paper, and paper beats rock.</span></li>
-                <li><i class="fa-solid fa-square" style="color: #ffd600;"></i><span>Agree ahead of time whether you'll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
-                <li><i class="fa-solid fa-square" style="color: #ffd600;"></i><span>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
-                <li><i class="fa-solid fa-square" style="color: #ffd600;"></i><span>If both players lay down the same hand, each player lays down another hand</span>
+                <li><i class="fa-solid fa-square " style="color: #ffd600; "></i><span>Rock beats scissors, scissors beat paper, and paper beats rock.</span></li>
+                <li><i class="fa-solid fa-square " style="color: #ffd600; "></i><span>Agree ahead of time whether you'll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                <li><i class="fa-solid fa-square " style="color: #ffd600; "></i><span>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                <li><i class="fa-solid fa-square " style="color: #ffd600; "></i><span>If both players lay down the same hand, each player lays down another hand</span>
                     </span>
                     </span>
                 </li>
             </ul>
         </div>
-        <div class="cross" onclick="closeRule()">
+        <div class="cross " onclick="closeRule() ">
             <h1>X</h1>
         </div>
     </div>
     <script>
+        function homepage() {
+            document.querySelector(".hurraypage").style.display = "none";
+            document.querySelector(".next ").style.display = "none";
+            document.querySelector(".Main-container").style.display = "block";
+            document.querySelector(".Lower").style.display = "flex";
+            document.querySelector(".result-contianer").style.display = "none";
+            document.querySelector("#RockPc").style.display = "none";
+            document.querySelector("#ScissorsPc").style.display = "none";
+            document.querySelector("#PaperPc").style.display = "none";
+            document.querySelector("#RockUser").style.display = "none";
+            document.querySelector("#ScissorsUser").style.display = "none";
+            document.querySelector("#PaperUser").style.display = "none";
+            document.querySelectorAll(".PcwinAnimation").forEach((span) => {
+                span.style.display = "none"
+            });
+            document.querySelectorAll(".UserwinAnimation").forEach((span) => {
+                span.style.display = "none"
+            });
+
+        }
+
+        function openhurray() {
+
+            document.querySelector(".hurraypage").style.display = "flex";
+            document.querySelector(".Main-container").style.display = "none"
+            document.querySelector(".next ").style.display = "none"
+
+
+        }
+
         function openRule() {
-            let open = document.querySelector(".rules-container")
-            open.style.display = "block"
+            let open = document.querySelector(".rules-container ")
+            open.style.display = "block "
 
         }
 
         function closeRule() {
-            let close = document.querySelector(".rules-container")
-            close.style.display = "none"
+            let close = document.querySelector(".rules-container ")
+            close.style.display = "none "
 
         }
     </script>
 </body>
+<script src="script.js"></script>
 
 </html>

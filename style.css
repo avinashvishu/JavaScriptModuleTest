@@ -1,7 +1,14 @@
+:root {
+    --rockBorder: #0074B6;
+    --scissorBorder: #BD00FF;
+    --paperBorder: #FFA943;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: var(--i);
 }
 
 html {
@@ -12,11 +19,16 @@ body {
     background: #8CC461;
 }
 
+.Main-container {
+    display: block;
+}
+
 .Upper {
     height: 30vh;
     display: flex;
     justify-content: center;
     align-items: end;
+    /* display: none; */
 }
 
 .upper-container {
@@ -117,28 +129,238 @@ body {
     cursor: pointer;
 }
 
-.gestures>span>img {
+.gesturesHW {
     height: 7rem;
     width: 7rem;
 }
 
 .rock {
+    border: 2rem solid var(--rockBorder);
+}
+
+.rock-position {
     top: -7.5rem;
     left: -7.5rem;
-    border: 20px solid #0074B6;
 }
 
 .scissors {
+    border: 2rem solid var(--scissorBorder);
+}
+
+.scissors-position {
     top: -7.5rem;
     right: -7.5rem;
-    border: 20px solid #BD00FF;
 }
 
 .paper {
+    border: 2rem solid var(--paperBorder);
+}
+
+.paper-position {
     bottom: -7.5rem;
     left: 9rem;
-    border: 20px solid #FFA943;
 }
+
+
+/* Result part */
+
+.result-contianer {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.result {
+    width: 99rem;
+    height: 33rem;
+    display: flex;
+}
+
+.user-picked,
+.Pc-picked {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    flex-grow: 1;
+}
+
+.user-picked h1,
+.Pc-picked h1 {
+    color: #FFF;
+    margin-bottom: 4rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 1.6rem;
+    z-index: 100;
+}
+
+
+/* User gesture border */
+
+#RockUser {
+    width: 100%;
+    height: 100%;
+    border: 2rem solid var(--rockBorder);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#ScissorsUser {
+    width: 100%;
+    height: 100%;
+    border: 2rem solid var(--scissorBorder);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#PaperUser {
+    width: 100%;
+    height: 100%;
+    border: 2rem solid var(--paperBorder);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+
+/* Pc gesture border */
+
+#RockPc {
+    width: 100%;
+    height: 100%;
+    border: 2rem solid var(--rockBorder);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#ScissorsPc {
+    width: 100%;
+    height: 100%;
+    border: 2rem solid var(--scissorBorder);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#PaperPc {
+    width: 100%;
+    height: 100%;
+    border: 2rem solid var(--paperBorder);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+
+/* Result animation part */
+
+.content {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 19rem;
+    width: 19rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.win {
+    position: relative;
+    height: 19rem;
+    width: 19rem;
+    background-color: rgba(46, 154, 37, 0.39);
+    border-radius: 50%;
+}
+
+.win span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    opacity: .8;
+    animation: winAnimation 4s ease-out infinite;
+    animation-delay: calc(1s *var(--i));
+}
+
+
+/* Win Animation */
+
+.UserwinAnimation {
+    display: none;
+}
+
+.PcwinAnimation {
+    display: none;
+}
+
+@keyframes winAnimation {
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+    90% {
+        opacity: 0.2;
+    }
+    20% {
+        opacity: 1;
+    }
+}
+
+
+/* Play again button section */
+
+.WinLose {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    font-family: 'Roboto', san-sarif;
+    color: #FFF;
+}
+
+.WinLose h1 {
+    font-size: 2.6rem;
+    letter-spacing: 0.5rem;
+}
+
+.WinLose h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+}
+
+.WinLose button {
+    width: 12rem;
+    height: 3.4rem;
+    color: #6B6B6B;
+    background-color: #FFF;
+    border: none;
+    border-radius: 10px;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+
+/* Rules and Next button section */
 
 .lowest-container {
     height: 10vh;
@@ -191,6 +413,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 0 .9rem #fff;
     display: none;
+    z-index: 100;
 }
 
 .rules-content {
@@ -239,4 +462,154 @@ body {
     top: -4rem;
     right: -4rem;
     cursor: pointer;
+}
+
+
+/* Hurray page display */
+
+.hurraypage {
+    width: 100vw;
+    height: 90vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hurraycup {
+    position: relative;
+    width: 50rem;
+    height: 40rem;
+}
+
+.cup {
+    position: absolute;
+    bottom: 1rem;
+    left: 15rem;
+}
+
+.cup img {
+    width: 20rem;
+    height: 20rem;
+}
+
+.hurraypage h1,
+h2 {
+    color: #FFF;
+    font-family: 'roboto', sans-serif;
+}
+
+.hurraypage h1 {
+    font-size: 5rem;
+    font-weight: 500;
+    letter-spacing: 10px;
+}
+
+.hurraypage h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+}
+
+.hurraypage button {
+    width: 12rem;
+    height: 3.4rem;
+    color: #6B6B6B;
+    background-color: #FFF;
+    border: none;
+    border-radius: 10px;
+    margin-top: 4rem;
+    cursor: pointer;
+}
+
+.star1 img {
+    height: 10rem;
+}
+
+.star2 img {
+    height: 10rem;
+}
+
+.star3 img {
+    height: 4rem;
+}
+
+.star4 img {
+    height: 4rem;
+}
+
+.star5 img {
+    height: 4rem;
+}
+
+.star6 img {
+    height: 10rem;
+}
+
+.star7 img {
+    height: 4rem;
+}
+
+.star8 img {
+    height: 7rem;
+}
+
+.star1 {
+    position: relative;
+    top: 20rem;
+}
+
+.star2 {
+    position: relative;
+    top: 0rem;
+    left: 19rem;
+}
+
+.star3 {
+    position: relative;
+    bottom: 6rem;
+    right: 15rem;
+}
+
+.star4 {
+    position: relative;
+    top: 8rem;
+    right: 8rem;
+}
+
+.star5 {
+    position: relative;
+    top: 28rem;
+    right: 20rem;
+}
+
+.star6 {
+    position: relative;
+    top: 25rem;
+    left: 3rem;
+}
+
+.star7 {
+    position: relative;
+    left: 4rem;
+}
+
+.star8 {
+    position: relative;
+}
+
+.star {
+    animation: twinkle 1s infinite linear;
+}
+
+@keyframes twinkle {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 0.9;
+    }
+    85% {
+        scale: 0.5;
+    }
 }
